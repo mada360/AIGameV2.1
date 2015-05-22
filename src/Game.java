@@ -15,17 +15,20 @@ public class Game {
     private static World world;
 
     public Game(){
-        game();
+       // game();
+
     }
 
     public static void game() {
-        world.loadWorld("worlds/world1.txt");
+        if(!running) {
+            new World("res/worlds/world1.txt");
+        }
         running = true;
         while(running){
             int moves = speed;
 
             while(moves > 0){
-              //  world.drawWorld();
+                world.drawWorld();
                 //Exit case
                 if(input == 9){
                     running = false;

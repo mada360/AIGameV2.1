@@ -5,13 +5,15 @@ import Logic.GameLogic;
 import Utils.Utils;
 
 public class World {
-    private static int width, height = GameLogic.getMapSize();
+    private static int width = GameLogic.getMapSize();
+    private static int height = GameLogic.getMapSize();
     private int[][] tiles;
     private int playerX = GameLogic.getPlayerX();
     private int playerY = GameLogic.getPlayerY();
 
-    public World(){
-
+    public World(String path){
+        loadWorld(path);
+        drawWorld();
     }
 
     public void loadWorld(String path){
