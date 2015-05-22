@@ -1,5 +1,6 @@
 import Logic.EnemyLogic;
 import Logic.GameLogic;
+import World.World;
 
 /**
  * Created by Adam on 18/05/2015.
@@ -11,19 +12,20 @@ public class Game {
 
     static boolean running = false;
     static int input;
-
+    private static World world;
 
     public Game(){
         game();
     }
 
     public static void game() {
+        world.loadWorld("worlds/world1.txt");
         running = true;
         while(running){
             int moves = speed;
 
             while(moves > 0){
-
+              //  world.drawWorld();
                 //Exit case
                 if(input == 9){
                     running = false;
